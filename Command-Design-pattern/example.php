@@ -17,22 +17,6 @@
         interface Command {
             public function execute();
         }
-
-        // Receiver
-        class TV {
-            public function turnOn() {
-                echo "TV is on.";
-            }
-
-            public function volumeUp() {
-                echo "Volume increased.";
-            }
-
-            public function volumeDown() {
-                echo "Volume decreased.";
-            }
-        }
-
         // Concrete Commands
         class PowerOnCommand implements Command {
             private $tv;
@@ -69,6 +53,21 @@
                 $this->tv->volumeDown();
             }
         }
+
+             // Receiver
+             class TV {
+                public function turnOn() {
+                    echo "TV is on.";
+                }
+    
+                public function volumeUp() {
+                    echo "Volume increased.";
+                }
+    
+                public function volumeDown() {
+                    echo "Volume decreased.";
+                }
+            }
 
         // Invoker
         class RemoteControl {
