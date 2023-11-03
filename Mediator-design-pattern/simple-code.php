@@ -11,6 +11,7 @@ class ChatRoom implements ChatMediator {
     }
 
     public function sendMessage($message, User $user){
+        $user->recieveMessage($message);
         foreach($this->users as $u){
             if($u !== $user){
                 $u->recieveMessage($message);
@@ -41,7 +42,7 @@ class ChatUser implements User {
 
       public function recieveMessage($message)
       {
-        echo  $this->name . '  '.'   '."received message !";
+        echo  "{$this->name} recieve message  : {$message}\n";
       }
 }
 
@@ -57,6 +58,7 @@ $chatroom->addUser($chatUser3);
 
 $chatUser1->sendMessage("Hi everyone");
 $chatUser2->sendMessage("Hi Ramziddin");
+$chatUser3->sendMessage("Hi Ramziddin");
 
 
 
