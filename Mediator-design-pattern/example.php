@@ -44,6 +44,7 @@
                 }
             }
         }
+        // function declation !
 
         public function getChatMessages() {
             return implode("<br>", $this->chatMessages);
